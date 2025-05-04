@@ -7,6 +7,7 @@ This is a simple GraphQL API written in Go using the [gqlgen](https://github.com
 - Create and list categories
 - Create and list courses
 - Query categories with their associated courses
+- Query courses with their associated category
 - Built with Go and gqlgen
 
 ## Technologies
@@ -102,6 +103,22 @@ query queryCourses {
     id
     name
     description
+  }
+}
+```
+
+### List Courses with Category
+
+```graphql
+query queryCoursesWithCategory {
+  courses {
+    id
+    name
+    description
+    category {
+      id
+      name
+    }
   }
 }
 ```
